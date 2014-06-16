@@ -7,6 +7,6 @@ Link: [frvi/dashing](https://registry.hub.docker.com/u/frvi/dashing/)
 
 ## Run
 
-    docker run -p 8080:3030 --privileged frvi/dashing
+	docker run -d -p 8080:3030 frvi/dashing
 
 And point your browser to [http://localhost:8080/](http://localhost:8080/).
