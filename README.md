@@ -4,13 +4,13 @@ Run [Dashing](http://dashing.io/) in a [Docker](http://docker.io/) container.
 Link: [frvi/dashing](https://registry.hub.docker.com/u/frvi/dashing/)
 
 ## Config
-To provide a custom dashboard, use Docker's VOLUME:
+To provide a custom dashboard, use container volume */dashboards*:
 ```
 docker run -v=/my/custom/dashboards:/dashboards -d -p 8080:3030 frvi/dashing
 ```
-To provide a custom dashboard, use Docker's VOLUME:
+To provide custom jobs, use container volume */jobs*:
 ```
-docker run -v=/local/jobs:/jobs -d -p 8080:3030 frvi/dashing
+docker run -v=/my/cool/job:/jobs -d -p 8080:3030 frvi/dashing
 ```
 ## Run
 ```
