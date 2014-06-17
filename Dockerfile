@@ -24,8 +24,9 @@ RUN mkdir -p /dashing
 #
 #  - Hotness Widget: https://gist.github.com/rowanu/6246149
 #  - fork of Hotness: https://gist.github.com/munkius/9209839
+#  - Random Aww plugin: https://gist.github.com/chelsea/5641535
 #
-RUN cd /; dashing new $DASH_WORKSPACE;cd $DASH_WORKSPACE; bundle; dashing install 9209839
+RUN cd /; dashing new $DASH_WORKSPACE;cd $DASH_WORKSPACE; bundle; dashing install 9209839; dashing install 5641535
 RUN ln -s /dashing/dashboards /dashboards
 RUN ln -s /dashing/jobs /jobs
 
