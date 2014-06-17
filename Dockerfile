@@ -25,6 +25,8 @@ RUN mkdir -p /dashing
 #  - Hotness Widget: https://gist.github.com/rowanu/6246149
 #
 RUN cd /; dashing new $DASH_WORKSPACE;cd $DASH_WORKSPACE; bundle; dashing install 6246149
+RUN ln -s /dashing/dashboards /dashboards
+RUN ln -s /dashing/jobs /jobs
 
 EXPOSE 3030
 
@@ -32,9 +34,11 @@ WORKDIR /dashing
 
 # If you want to use a local edits of dashing dashboard,
 # containing layout.erb and sample.erb, add
-#   -v=/your/local/copy:/dashing/dashboards
+#   -v=/local/dashboards:/dashboards
+#   -v=/your/jobs:/jobs
 #
-VOLUME /dashing/dashboards
+VOLUME /dashboards
+VOLUME /jobs
 
 # Start dashing, and ugly (de facto?) hack to keep it running
 # TODO: fix ugly hack
