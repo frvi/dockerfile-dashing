@@ -18,8 +18,10 @@ docker run -d -p 8080:3030 frvi/dashing
 ```
 And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
-### Extras
-Thanks to [@rowanu](https://github.com/rowanu) for the [Hotness Widget](https://gist.github.com/rowanu/6246149).
+### Thanks
+- [@rowanu](https://github.com/rowanu), [Hotness Widget](https://gist.github.com/rowanu/6246149) plugin.
+- [@munkius](https://github.com/munkius), [fork](https://gist.github.com/munkius/9209839) of Hotness Widget plugin.
+- [@chelsea](https://github.com/chelsea), [Random Aww](https://gist.github.com/chelsea/5641535) plugin.
 
 ### TODO:
 - Use custom widgets via *GitHub* gists; ```dashing install <gist>```.
