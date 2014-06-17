@@ -23,8 +23,9 @@ RUN mkdir -p /dashing
 # Create dashing data, install custom widgets
 #
 #  - Hotness Widget: https://gist.github.com/rowanu/6246149
+#  - fork of Hotness: https://gist.github.com/munkius/9209839
 #
-RUN cd /; dashing new $DASH_WORKSPACE;cd $DASH_WORKSPACE; bundle; dashing install 6246149
+RUN cd /; dashing new $DASH_WORKSPACE;cd $DASH_WORKSPACE; bundle; dashing install 9209839
 RUN ln -s /dashing/dashboards /dashboards
 RUN ln -s /dashing/jobs /jobs
 
