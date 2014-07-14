@@ -43,9 +43,10 @@ Edit this file to change your API key, to add authentication and more.
 
 
 ### Thanks
+- [@mattgruter](https://github.com/mattgruter), awsome contributions!
 - [@rowanu](https://github.com/rowanu), [Hotness Widget](https://gist.github.com/rowanu/6246149).
 - [@munkius](https://github.com/munkius), [fork](https://gist.github.com/munkius/9209839) of Hotness Widget.
 - [@chelsea](https://github.com/chelsea), [Random Aww](https://gist.github.com/chelsea/5641535).
 
 ### TODO:
-- Update Gemfile somehow?
+
