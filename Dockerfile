@@ -33,4 +33,4 @@ VOLUME /jobs
 EXPOSE 3030
 WORKDIR /dashing
 
-CMD dashing start
+CMD ["dashing", "start"]
