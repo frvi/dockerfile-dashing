@@ -3,7 +3,14 @@ Run [Dashing](http://dashing.io/) in a [Docker](http://docker.io/) container.
 
 Link: [frvi/dashing](https://registry.hub.docker.com/u/frvi/dashing/)
 
-## Volumes
+
+## Run
+```docker run -d -p 8080:3030 frvi/dashing```
+
+And point your browser to [http://localhost:8080/](http://localhost:8080/).
+
+
+## Configuration
 ### Dashboards
 To provide a custom dashboard, use container volume */dashboards*:
 
@@ -14,17 +21,7 @@ To provide custom jobs, use container volume */jobs*:
 
 ```docker run -v=/my/cool/job:/jobs -d -p 8080:3030 frvi/dashing```
 
-### Configuration
-The configuration file ```config.ru``` is available on volume */config*.
-
-Edit this file to change your API key, to add authentication and more.
-
-## Run
-```docker run -d -p 8080:3030 frvi/dashing```
-
-And point your browser to [http://localhost:8080/](http://localhost:8080/).
-
-## Widgets
+### Widgets
 To install custom widgets supply the gist IDs of the widgets as runtime arguments to the container:
 
 ```docker run -d -p 8080:3030 frvi/dashing 5641535```
@@ -32,10 +29,16 @@ To install custom widgets supply the gist IDs of the widgets as runtime argument
 This example will install the "Random Aww" widget (from https://gist.github.com/chelsea/5641535
 ) before starting dashing. Multiple widgets can be supplied.
 
+### Configuration File
+The configuration file ```config.ru``` is available on volume */config*.
+
+Edit this file to change your API key, to add authentication and more.
+
+
 ## Debugging
 To get a shell use the ```--entrypoint``` flag:
 
-```docker run -i --entrypoint /bin/bash -t frvi/dashing```
+```docker run -i --entrypoint /bin/bash -t frvi/dashing ```
 
 ### Thanks
 - [@rowanu](https://github.com/rowanu), [Hotness Widget](https://gist.github.com/rowanu/6246149) plugin.
