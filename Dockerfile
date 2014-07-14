@@ -25,10 +25,7 @@ RUN mkdir /dashing/config && \
     ln -s /dashing/config /config
 ADD run.sh /
 
-# If you want to use a local edits of dashing dashboard,
-# containing layout.erb and sample.erb, add
-#   -v=/local/dashboards:/dashboards
-#   -v=/your/jobs:/jobs
+# Volumes for custom dashing files; dashboards, jobs, and config
 VOLUME /dashboards
 VOLUME /jobs
 VOLUME /config
