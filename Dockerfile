@@ -33,5 +33,5 @@ VOLUME /config
 EXPOSE 3030
 WORKDIR /dashing
 
-ENTRYPOINT ["/run.sh"]
+CMD ["/run.sh"]
 
