@@ -14,14 +14,16 @@ RUN apt-get install -y make g++ ruby-full nodejs ca-certificates
 # Install dashing
 RUN gem install bundle
 RUN gem install dashing
-
-# Create dashing data, install custom widgets
-#  - Hotness Widget: https://gist.github.com/rowanu/6246149
-#  - fork of Hotness: https://gist.github.com/munkius/9209839
-#  - Random Aww plugin: https://gist.github.com/chelsea/5641535
-RUN cd /; mkdir dashing; dashing new dashing; cd dashing; bundle; dashing install 9209839; dashing install 5641535
-RUN ln -s /dashing/dashboards /dashboards
-RUN ln -s /dashing/jobs /jobs
+RUN mkdir /dashing && \
+    dashing new dashing && \
+    cd /dashing && bundle
+RUN ln -s /dashing/dashboards /dashboards && \
+    ln -s /dashing/jobs /jobs
+RUN mkdir /dashing/config && \
+    mv /dashing/config.ru /dashing/config/config.ru && \
+    ln -s /dashing/config/config.ru /dashing/config.ru && \
+    ln -s /dashing/config /config
+ADD run.sh /
 
 # If you want to use a local edits of dashing dashboard,
 # containing layout.erb and sample.erb, add
@@ -29,8 +31,10 @@ RUN ln -s /dashing/jobs /jobs
 #   -v=/your/jobs:/jobs
 VOLUME /dashboards
 VOLUME /jobs
+VOLUME /config
 
 EXPOSE 3030
 WORKDIR /dashing
 
-CMD dashing start
+ENTRYPOINT ["/run.sh"]
+
