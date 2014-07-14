@@ -17,11 +17,23 @@ To provide custom jobs, use container volume */jobs*:
 
 And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
+## Widgets
+To install custom widgets supply the gist IDs of the widgets as runtime arguments to the container:
+
+```docker run -d -p 8080:3030 frvi/dashing 5641535```
+
+This example will install the "Random Aww" widget (from https://gist.github.com/chelsea/5641535
+) before starting dashing. Multiple widgets can be supplied.
+
+## Debugging
+To get a shell use the ```--entrypoint``` flag:
+
+```docker run -i --entrypoint /bin/bash -t frvi/dashing```
+
 ### Thanks
 - [@rowanu](https://github.com/rowanu), [Hotness Widget](https://gist.github.com/rowanu/6246149) plugin.
 - [@munkius](https://github.com/munkius), [fork](https://gist.github.com/munkius/9209839) of Hotness Widget plugin.
 - [@chelsea](https://github.com/chelsea), [Random Aww](https://gist.github.com/chelsea/5641535) plugin.
 
 ### TODO:
-- Use custom widgets via *GitHub* gists; ```dashing install <gist>```.
 - Update Gemfile somehow?
