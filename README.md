@@ -3,14 +3,21 @@ Run [Dashing](http://dashing.io/) in a [Docker](http://docker.io/) container.
 
 Link: [frvi/dashing](https://registry.hub.docker.com/u/frvi/dashing/)
 
-## Config
+## Volumes
+### Dashboards
 To provide a custom dashboard, use container volume */dashboards*:
 
 ```docker run -v=/my/custom/dashboards:/dashboards -d -p 8080:3030 frvi/dashing```
 
+### Jobs
 To provide custom jobs, use container volume */jobs*:
 
 ```docker run -v=/my/cool/job:/jobs -d -p 8080:3030 frvi/dashing```
+
+### Configuration
+The configuration file ```config.ru``` is available on volume */config*.
+
+Edit this file to change your API key, to add authentication and more.
 
 ## Run
 ```docker run -d -p 8080:3030 frvi/dashing```

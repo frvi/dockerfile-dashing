@@ -17,9 +17,12 @@ RUN gem install dashing
 RUN mkdir /dashing && \
     dashing new dashing && \
     cd /dashing && bundle
-
-RUN ln -s /dashing/dashboards /dashboards
-RUN ln -s /dashing/jobs /jobs
+RUN ln -s /dashing/dashboards /dashboards && \
+    ln -s /dashing/jobs /jobs
+RUN mkdir /dashing/config && \
+    mv /dashing/config.ru /dashing/config/config.ru && \
+    ln -s /dashing/config/config.ru /dashing/config.ru && \
+    ln -s /dashing/config /config
 ADD run.sh /
 
 # If you want to use a local edits of dashing dashboard,
@@ -28,6 +31,7 @@ ADD run.sh /
 #   -v=/your/jobs:/jobs
 VOLUME /dashboards
 VOLUME /jobs
+VOLUME /config
 
 EXPOSE 3030
 WORKDIR /dashing
