@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function install_widgets() {
-  WIDGETS=$1
+  WIDGETS=$@
   if [[ ! -z "$WIDGETS" ]]; then
     for WIDGET in $WIDGETS; do
       echo -e "\nInstalling widget from gist $WIDGET"
@@ -11,7 +11,7 @@ function install_widgets() {
 }
 
 function install_gems() {
-  GEMS=$1
+  GEMS=$@
   if [[ ! -z "$GEMS" ]]; then
     echo -e "\nInstalling gem(s): $GEMS"
     for GEM in $GEMS; do
