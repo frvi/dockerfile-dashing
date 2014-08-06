@@ -35,7 +35,9 @@ To install gems, supply the gem name(s) as an environment variable:
 ```docker run -d -e GEMS=instagram -e WIDGETS=5278790 -p 8080:3030 frvi/dashing```
 
 This example installs the [Instagram photos by location](https://gist.github.com/mjamieson/5278790) widget,
-which depends on the instagram gem. Multiple gems can be supplied.
+which depends on the instagram gem. Multiple gems and widgets can be supplied like so:
+
+```docker run -d -e GEMS="mysql instagram" -e WIDGETS=5278790 -p 8080:3030 frvi/dashing```
 
 ### Configuration File
 The configuration file ```config.ru``` is available on volume */config*.
