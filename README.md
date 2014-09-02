@@ -12,12 +12,12 @@ And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
 ## Configuration
 ### Dashboards
-To provide a custom dashboard, use container volume */dashboards*:
+To provide a custom dashboard, use container volume **/dashboards**:
 
 ```docker run -v=/my/custom/dashboards:/dashboards -d -p 8080:3030 frvi/dashing```
 
 ### Jobs
-To provide custom jobs, use container volume */jobs*:
+To provide custom jobs, use container volume **/jobs**:
 
 ```docker run -v=/my/cool/job:/jobs -d -p 8080:3030 frvi/dashing```
 
@@ -38,6 +38,9 @@ This example installs the [Instagram photos by location](https://gist.github.com
 which depends on the instagram gem. Multiple gems and widgets can be supplied like so:
 
 ```docker run -d -e GEMS="mysql instagram" -e WIDGETS=5278790 -p 8080:3030 frvi/dashing```
+
+### Public (favicon, 404)
+To provide custom 404 and favicon, use container volume **/public**.
 
 ### Configuration File
 The configuration file ```config.ru``` is available on volume */config*.
