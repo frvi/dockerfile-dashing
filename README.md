@@ -16,6 +16,8 @@ To provide a custom dashboard, use container volume **/dashboards**:
 
 ```docker run -v=/my/custom/dashboards:/dashboards -d -p 8080:3030 frvi/dashing```
 
+(*Don't forget to also provide the layout.erb*)
+
 ### Jobs
 To provide custom jobs, use container volume **/jobs**:
 
