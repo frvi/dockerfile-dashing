@@ -10,7 +10,8 @@ RUN mkdir /dashing && \
     cd /dashing && bundle
 RUN ln -s /dashing/dashboards /dashboards && \
     ln -s /dashing/jobs /jobs && \
-    ln -s /dashing/public /public
+    ln -s /dashing/public /public && \
+    ln -s /dashing/widgets /widgets
 RUN mkdir /dashing/config && \
     mv /dashing/config.ru /dashing/config/config.ru && \
     ln -s /dashing/config/config.ru /dashing/config.ru && \
@@ -22,6 +23,7 @@ VOLUME /dashboards
 VOLUME /jobs
 VOLUME /config
 VOLUME /public
+VOLUME /widgets
 
 EXPOSE 3030
 WORKDIR /dashing

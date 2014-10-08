@@ -31,6 +31,11 @@ To install custom widgets supply the gist IDs of the widgets as an environment v
 This example will install the [Random Aww](https://gist.github.com/chelsea/5641535) widget
 before starting dashing. Multiple widgets can be supplied.
 
+Also you can use local custom widgets
+
+```docker run -v=/my/cool/widgets:/widgets -d -p 8080:3030 frvi/dashing```
+
+
 ### Gems
 To install gems, supply the gem name(s) as an environment variable:
 
