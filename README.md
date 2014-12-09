@@ -62,4 +62,4 @@ Edit this file to change your API key, to add authentication and more.
 - [@chelsea](https://github.com/chelsea), [Random Aww](https://gist.github.com/chelsea/5641535).
 
 ### TODO:
-
+- [ ] Use official Ruby image from Docker hub.
