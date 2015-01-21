@@ -17,7 +17,7 @@ RUN mkdir /dashing && \
 
 COPY run.sh /
 
-VOLUME ["/dashboards", "/jobs", "/config", "/public", "/widgets"}
+VOLUME ["/dashboards", "/jobs", "/config", "/public", "/widgets"]
 
 EXPOSE 3030
 WORKDIR /dashing
