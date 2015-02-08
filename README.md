@@ -11,6 +11,11 @@ And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
 
 ## Configuration
+### Custom dashing port
+If you want dashing to use a custom port inside the container, e g 8080, use the environment variable `$PORT`.
+
+```docker run -d -e PORT=8080 -p 80:8080 frvi/dashing```
+
 ### Dashboards
 To provide a custom dashboard, use container volume **/dashboards**:
 

@@ -27,6 +27,10 @@ if [[ ! -e /installed ]]; then
   touch /installed
 fi
 
+if [[ ! -z "$PORT" ]]; then
+  PORT_ARG="-p $PORT"
+fi
+
 # Start dashing
-exec dashing start
+exec dashing start $PORT_ARG
 

@@ -19,7 +19,8 @@ COPY run.sh /
 
 VOLUME ["/dashboards", "/jobs", "/config", "/public", "/widgets"]
 
-EXPOSE 3030
+ENV PORT 3030
+EXPOSE $PORT
 WORKDIR /dashing
 
 CMD ["/run.sh"]
