@@ -8,6 +8,7 @@ RUN mkdir /dashing && \
     cd /dashing && bundle && \
     ln -s /dashing/dashboards /dashboards && \
     ln -s /dashing/jobs /jobs && \
+    ln -s /dashing/assets /assets && \
     ln -s /dashing/public /public && \
     ln -s /dashing/widgets /widgets && \
     mkdir /dashing/config && \
@@ -17,7 +18,7 @@ RUN mkdir /dashing && \
 
 COPY run.sh /
 
-VOLUME ["/dashboards", "/jobs", "/config", "/public", "/widgets"]
+VOLUME ["/dashboards", "/jobs", "/config", "/public", "/widgets", "/assets"]
 
 ENV PORT 3030
 EXPOSE $PORT
