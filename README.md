@@ -59,6 +59,8 @@ The configuration file ```config.ru``` is available on volume */config*.
 
 Edit this file to change your API key, to add authentication and more.
 
+### lib volume
+The dashing lib dir is available on volume */lib-dashing*.
 
 ## Thanks
 - [@mattgruter](https://github.com/mattgruter), awsome contributions!

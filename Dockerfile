@@ -5,10 +5,12 @@ MAINTAINER Fredrik Vihlborg <fredrik.wihlborg@gmail.com>
 RUN gem install bundle dashing
 RUN mkdir /dashing && \
     dashing new dashing && \
-    cd /dashing && bundle && \
+    cd /dashing && \
+    bundle && \
     ln -s /dashing/dashboards /dashboards && \
     ln -s /dashing/jobs /jobs && \
     ln -s /dashing/assets /assets && \
+    ln -s /dashing/lib /lib-dashing && \
     ln -s /dashing/public /public && \
     ln -s /dashing/widgets /widgets && \
     mkdir /dashing/config && \
@@ -18,7 +20,7 @@ RUN mkdir /dashing && \
 
 COPY run.sh /
 
-VOLUME ["/dashboards", "/jobs", "/config", "/public", "/widgets", "/assets"]
+VOLUME ["/dashboards", "/jobs", "/lib-dashing", "/config", "/public", "/widgets", "/assets"]
 
 ENV PORT 3030
 EXPOSE $PORT
