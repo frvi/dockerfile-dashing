@@ -69,7 +69,7 @@ The dashing lib dir is available on volume */lib-dashing*.
 - [@chelsea](https://github.com/chelsea), [Random Aww](https://gist.github.com/chelsea/5641535).
 
 ## TODO:
-- [ ] Use official Ruby image from Docker hub.
+- [x] Use official Ruby image from Docker hub. (Thank you [@bemehow](https://github.com/bemehow))
 
 ## License
 Distributed under the MIT license
