@@ -2,8 +2,9 @@
 Run [Smashing](http://dashing.io/) in a minimal
 [Alpine](https://alpinelinux.org/about/) [Docker](http://docker.io/) container.
 
-Link: [rgcamus/dockerfile-alpine_smashing](https://registry.hub.docker.com/u/frvi/dashing/)
+Using alpine image, the container size has been reduced from about 800MB to about 200MB.
 
+Link: [rgcamus/dockerfile-alpine_smashing](https://registry.hub.docker.com/u/rgcamus/alpine_dashing/)
 
 ## Run
 ```docker run -d -p 8080:3030 rgcamus/alpine_smashing```
