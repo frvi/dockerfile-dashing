@@ -5,6 +5,11 @@ Using alpine image. The container size has been reduced from about 800MB to abou
 
 Link: [rgcamus/alpine_smashing](https://registry.hub.docker.com/u/rgcamus/alpine_smashing/)
 
+[![Docker Stars](https://img.shields.io/docker/stars/rgcamus/alpine_smashing.svg)](https://hub.docker.com/r/rgcamus/alpine_smashing)
+[![Docker Pulls](https://img.shields.io/docker/pulls/rgcamus/alpine_smashing.svg)](https://hub.docker.com/r/rgcamus/alpine_smashing)
+
+
+
 ## Build (optional)
 
 ```git clone https://github.com/rgcamus/dockerfile-alpine_smashing.git```
