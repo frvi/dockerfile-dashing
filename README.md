@@ -7,9 +7,11 @@ Link: [rgcamus/alpine_smashing](https://registry.hub.docker.com/u/rgcamus/alpine
 
 ## Build (optional)
 
-```git clone https://github.com/rgcamus/dockerfile-alpine_smashing.git ```
+```git clone https://github.com/rgcamus/dockerfile-alpine_smashing.git```
+
 ```cd dockerfile-alpine_smashing```
-```docker build -t alpine_smashing .```
+
+```docker build -t alpine_smashing . ```
 
 ## Run
 ```docker run -d -p 8080:3030 rgcamus/alpine_smashing```
@@ -69,6 +71,8 @@ Edit this file to change your API key, to add authentication and more.
 
 ### lib volume
 The smashing lib dir is available on volume */lib-smashing*.
+
+Note: This is a fork of the dockerfile-dashing. Read about that [here](http://github.com/frvi/dockerfile-dashing)
 
 ## Thanks
 - [@frvi](https://github.com/frvi), original author of run.sh)
