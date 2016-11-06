@@ -32,5 +32,5 @@ if [[ ! -z "$PORT" ]]; then
 fi
 
 # Start dashing
-exec dashing start $PORT_ARG
+exec smashing start $PORT_ARG
 

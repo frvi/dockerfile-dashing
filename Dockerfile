@@ -1,24 +1,35 @@
-FROM ruby:2.3.1
+FROM alpine:latest
 
-MAINTAINER Fredrik Vihlborg <fredrik.wihlborg@gmail.com>
-RUN apt-get update && \
-    apt-get -y install nodejs && \
-    apt-get -y clean
-RUN gem install bundler dashing
-RUN mkdir /dashing && \
-    dashing new dashing && \
-    cd /dashing && \
-    bundle && \
-    ln -s /dashing/dashboards /dashboards && \
-    ln -s /dashing/jobs /jobs && \
-    ln -s /dashing/assets /assets && \
-    ln -s /dashing/lib /lib-dashing && \
-    ln -s /dashing/public /public && \
-    ln -s /dashing/widgets /widgets && \
-    mkdir /dashing/config && \
-    mv /dashing/config.ru /dashing/config/config.ru && \
-    ln -s /dashing/config/config.ru /dashing/config.ru && \
-    ln -s /dashing/config /config
+MAINTAINER Ramón G. Camus <rgcamus@gmail.com>
+
+RUN apk update && apk upgrade
+RUN apk add curl wget bash
+RUN apk add ruby ruby-bundler nodejs
+
+# Needed for make native extensions
+RUN apk add ruby-dev g++ musl-dev make
+
+RUN echo "gem: --no-document" > /etc/gemrc
+RUN gem install bundler smashing json
+
+# Create dashboard and link volumes
+RUN smashing new smashing
+
+WORKDIR /smashing
+
+RUN cd /smashing 					\
+    && bundle    					\
+    && ln -s /smashing/dashboards /dashboards 		\
+    && ln -s /smashing/jobs       /jobs 		\
+    && ln -s /smashing/assets     /assets		\
+    && ln -s /smashing/lib        /lib-dashing 		\
+    && ln -s /smashing/public     /public 		\
+    && ln -s /smashing/widgets    /widgets 		\
+    && mkdir /smashing/config 				\
+    && mv /smashing/config.ru /smashing/config/config.ru  	\
+    && ln -s /smashing/config/config.ru /smashing/config.ru  	\
+    && ln -s /smashing/config 	  /config  			\
+    && rm -rf /var/cache/apk/*
 
 COPY run.sh /
 
@@ -26,7 +37,6 @@ VOLUME ["/dashboards", "/jobs", "/lib-dashing", "/config", "/public", "/widgets"
 
 ENV PORT 3030
 EXPOSE $PORT
-WORKDIR /dashing
+WORKDIR /smashing
 
 CMD ["/run.sh"]
-
