@@ -5,7 +5,7 @@ function install_widgets() {
   if [[ ! -z "$WIDGETS" ]]; then
     for WIDGET in $WIDGETS; do
       echo -e "\nInstalling widget from gist $WIDGET"
-      dashing install "$WIDGET"
+      smashing install "$WIDGET"
     done
   fi
 }
@@ -31,6 +31,6 @@ if [[ ! -z "$PORT" ]]; then
   PORT_ARG="-p $PORT"
 fi
 
-# Start dashing
+# Start smashing
 exec smashing start $PORT_ARG
 
