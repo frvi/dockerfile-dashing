@@ -22,7 +22,7 @@ RUN cd /smashing 					\
     && ln -s /smashing/dashboards /dashboards 		\
     && ln -s /smashing/jobs       /jobs 		\
     && ln -s /smashing/assets     /assets		\
-    && ln -s /smashing/lib        /lib-dashing 		\
+    && ln -s /smashing/lib        /lib-smashing		\
     && ln -s /smashing/public     /public 		\
     && ln -s /smashing/widgets    /widgets 		\
     && mkdir /smashing/config 				\
@@ -33,7 +33,7 @@ RUN cd /smashing 					\
 
 COPY run.sh /
 
-VOLUME ["/dashboards", "/jobs", "/lib-dashing", "/config", "/public", "/widgets", "/assets"]
+VOLUME ["/dashboards", "/jobs", "/lib-smashing", "/config", "/public", "/widgets", "/assets"]
 
 ENV PORT 3030
 EXPOSE $PORT
