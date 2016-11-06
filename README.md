@@ -1,10 +1,9 @@
 # Smashing Alpine Container (new dashing name)
-Run [Smashing](http://dashing.io/) in a minimal
-[Alpine](https://alpinelinux.org/about/) [Docker](http://docker.io/) container.
+Run [Smashing](http://dashing.io/) in a minimal [Alpine](https://alpinelinux.org/about/) [Docker](http://docker.io/) container.
 
 Using alpine image. The container size has been reduced from about 800MB to about 200MB.
 
-Link: [rgcamus/dockerfile-alpine_smashing](https://registry.hub.docker.com/u/rgcamus/alpine_smashing/)
+Link: [rgcamus/alpine_smashing](https://registry.hub.docker.com/u/rgcamus/alpine_smashing/)
 
 ## Build (optional)
 
@@ -15,10 +14,8 @@ Link: [rgcamus/dockerfile-alpine_smashing](https://registry.hub.docker.com/u/rgc
 ## Run
 ```docker run -d -p 8080:3030 rgcamus/alpine_smashing```
 
-## Run
-```docker run -d -p 8080:3030 rgcamus/alpine_smashing```
-
-And point your browser to [http://localhost:8080/](http://localhost:8080/).
+And point your browser to [http://localhost:8080/](http://localhost:8080/),
+or to [http://localhost:8080/sampletv](http://localhost:8080/sampletv) for a 1080p TV layout.
 
 
 ## Configuration
