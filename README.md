@@ -1,10 +1,10 @@
-# Dashing
+# Smashing Alpine Container (new dashing name)
 Run [Smashing](http://dashing.io/) in a minimal
 [Alpine](https://alpinelinux.org/about/) [Docker](http://docker.io/) container.
 
 Using alpine image. The container size has been reduced from about 800MB to about 200MB.
 
-Link: [rgcamus/dockerfile-alpine_smashing](https://registry.hub.docker.com/u/rgcamus/alpine_dashing/)
+Link: [rgcamus/dockerfile-alpine_smashing](https://registry.hub.docker.com/u/rgcamus/alpine_smashing/)
 
 ## Build (optional)
 
@@ -22,8 +22,8 @@ And point your browser to [http://localhost:8080/](http://localhost:8080/).
 
 
 ## Configuration
-### Custom dashing port
-If you want dashing to use a custom port inside the container, e g 8080, use the environment variable `$PORT`:
+### Custom smashing port
+If you want smashing to use a custom port inside the container, e g 8080, use the environment variable `$PORT`:
 
 ```docker run -d -e PORT=8080 -p 80:8080 rgcamus/alpine_smashing```
 
@@ -45,7 +45,7 @@ To install custom widgets supply the gist IDs of the widgets as an environment v
 ```docker run -d -e WIDGETS=5641535 -p 8080:3030 rgcamus/alpine_smashing```
 
 This example will install the [Random Aww](https://gist.github.com/chelsea/5641535) widget
-before starting dashing. Multiple widgets can be supplied.
+before starting smashing. Multiple widgets can be supplied.
 
 Also you can use local custom widgets
 
@@ -71,7 +71,7 @@ The configuration file ```config.ru``` is available on volume */config*.
 Edit this file to change your API key, to add authentication and more.
 
 ### lib volume
-The dashing lib dir is available on volume */lib-dashing*.
+The smashing lib dir is available on volume */lib-smashing*.
 
 ## Thanks
 - [@frvi](https://github.com/frvi), original author of run.sh)
