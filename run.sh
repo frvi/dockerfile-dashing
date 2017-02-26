@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function install_json() {
+  echo -e "\ngem 'json'" >> Gemfile
+  echo -e "\nAdded json's explicit dependency on Gemfile."
+}
+
 function install_widgets() {
   WIDGETS=$@
   if [[ ! -z "$WIDGETS" ]]; then
@@ -22,6 +27,7 @@ function install_gems() {
 }
 
 if [[ ! -e /installed ]]; then
+  install_json
   install_widgets $WIDGETS
   install_gems $GEMS
   touch /installed
