@@ -1,4 +1,7 @@
-# Smashing Alpine Container:  Smashig is the new http://dashing.io name. 
+## Smashing Alpine Container
+
+(Smashing is the new http://dashing.io name)
+
 Run [Smashing](https://github.com/Smashing/smashing) in a minimal [Alpine](https://alpinelinux.org/about/) [Docker](http://docker.io/) container.
 
 Using alpine image. The container size has been reduced from about 800MB to about 200MB.
