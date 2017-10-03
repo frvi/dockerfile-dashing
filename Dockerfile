@@ -1,12 +1,12 @@
 FROM alpine:latest
 
-MAINTAINER Ramón G. Camus <rgcamus@gmail.com>
+LABEL LABEL maintainer "Ramón G. Camus <rgcamus@gmail.com>"
 
 RUN apk update && apk upgrade \
     && apk add curl wget bash \
     && apk add ruby ruby-bundler nodejs
 
-# Needed for make native extensions \
+# Needed to make native extensions \
 RUN apk add ruby-dev g++ musl-dev make \
     && echo "gem: --no-document" > /etc/gemrc \
     && gem install bundler smashing json
@@ -35,7 +35,7 @@ COPY run.sh /
 VOLUME ["/dashboards", "/jobs", "/lib-smashing", "/config", "/public", "/widgets", "/assets"]
 
 ENV PORT 3030
-EXPOSE $PORT
+EXPOSE ${PORT}
 WORKDIR /smashing
 
 CMD ["/run.sh"]
