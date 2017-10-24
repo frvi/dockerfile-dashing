@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-LABEL LABEL maintainer "Ramón G. Camus <rgcamus@gmail.com>"
+LABEL maintainer "Ramón G. Camus <rgcamus@gmail.com>"
 
 RUN apk update && apk upgrade \
     && apk add curl wget bash \
