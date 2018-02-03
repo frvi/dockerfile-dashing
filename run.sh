@@ -1,8 +1,10 @@
 #!/bin/bash
 
-function install_json() {
+function install_json_and_tz() {
+  echo -e "\nAdding json and tzinfo explicit dependency on Gemfile."
   echo -e "\ngem 'json'" >> Gemfile
-  echo -e "\nAdded json's explicit dependency on Gemfile."
+  echo -e "\ngem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]" >> Gemfile
+  echo -e "\n done..."
 }
 
 function install_widgets() {
@@ -27,7 +29,7 @@ function install_gems() {
 }
 
 if [[ ! -e /installed ]]; then
-  install_json
+  install_json_and_tz
   install_widgets $WIDGETS
   install_gems $GEMS
   touch /installed
@@ -38,5 +40,6 @@ if [[ ! -z "$PORT" ]]; then
 fi
 
 # Start smashing
+echo -e "\n Starting ..."
 exec smashing start $PORT_ARG
 

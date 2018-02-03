@@ -1,9 +1,9 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 LABEL maintainer "Ramón G. Camus <rgcamus@gmail.com>"
 
 RUN apk update && apk upgrade \
-    && apk add curl wget bash \
+    && apk add tzdata curl wget bash \
     && apk add ruby ruby-bundler nodejs
 
 # Needed to make native extensions \
