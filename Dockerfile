@@ -6,7 +6,7 @@ RUN apk update && apk upgrade \
     && apk add tzdata curl wget bash \
     && apk add ruby ruby-bundler nodejs
 
-# Needed to make native extensions \
+# Needed to make native extensions
 RUN apk add ruby-dev g++ musl-dev make \
     && echo "gem: --no-document" > /etc/gemrc \
     && gem install bundler smashing json
