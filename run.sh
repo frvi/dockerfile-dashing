@@ -1,8 +1,9 @@
 #!/bin/bash
 
-function install_json_and_tz() {
-  echo -e "\nAdding json and tzinfo explicit dependency on Gemfile."
+function install_dependencies() {
+  echo -e "\nAdding json,tzinfo, thin... explicit dependency on Gemfile."
   echo -e "\ngem 'json'" >> Gemfile
+  echo -e "\ngem 'thin'" >> Gemfile
   echo -e "\ngem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]" >> Gemfile
   echo -e "\n done..."
 }
@@ -29,7 +30,7 @@ function install_gems() {
 }
 
 if [[ ! -e /installed ]]; then
-  install_json_and_tz
+  install_dependencies
   install_widgets $WIDGETS
   install_gems $GEMS
   touch /installed

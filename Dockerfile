@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM ruby:2.5.3-alpine3.8
 
 LABEL maintainer "Ramón G. Camus <rgcamus@gmail.com>"
 
