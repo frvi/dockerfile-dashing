@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.2-alpine3.8 (27/10/2018)
+## v1.1.0-alpine3.8 (27/10/2018)
 
 - Using docker image FROM ruby:2.5.3-alpine3.8
   * upgrade to alpine 3.8
